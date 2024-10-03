@@ -4,23 +4,14 @@ import {
   WrapperTextHeader,
   WrapperHeaderAccount,
 } from "./style";
-import { Input, Col } from "antd";
+import { Col } from "antd";
+import ButtonSearch from "../ButtonSearch/ButtonSearch";
 import {
-  AudioOutlined,
   UserOutlined,
   CaretDownOutlined,
   ShoppingCartOutlined,
 } from "@ant-design/icons";
-const { Search } = Input;
-const suffix = (
-  <AudioOutlined
-    style={{
-      fontSize: 16,
-      color: "#1677ff",
-    }}
-  />
-);
-const onSearch = (value, _e, info) => console.log(info?.source, value);
+
 function HeaderComponent() {
   return (
     <div>
@@ -29,15 +20,17 @@ function HeaderComponent() {
           <WrapperTextHeader>IE-Commerce</WrapperTextHeader>
         </Col>
         <Col span={12}>
-          <Search
+          <ButtonSearch
             placeholder="input search text"
-            enterButton="Search"
-            size="medium"
-            suffix={suffix}
-            onSearch={onSearch}
+            textButton="Search"
+            size="large"
+            bordered={false}
           />
         </Col>
-        <Col span={6} style={{ display: "flex", gap: "20px" }}>
+        <Col
+          span={6}
+          style={{ display: "flex", gap: "20px", alignItems: "center" }}
+        >
           <WrapperHeaderAccount>
             <UserOutlined style={{ fontSize: "30px" }} />
             <div>
