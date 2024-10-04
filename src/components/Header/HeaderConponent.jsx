@@ -3,6 +3,7 @@ import {
   WrapperHeader,
   WrapperTextHeader,
   WrapperHeaderAccount,
+  WrapperTextHeaderSmall,
 } from "./style";
 import { Col } from "antd";
 import ButtonSearch from "../ButtonSearch/ButtonSearch";
@@ -15,7 +16,7 @@ import {
 function HeaderComponent() {
   return (
     <div>
-      <WrapperHeader gutter={16}>
+      <WrapperHeader>
         <Col span={6}>
           <WrapperTextHeader>IE-Commerce</WrapperTextHeader>
         </Col>
@@ -34,16 +35,16 @@ function HeaderComponent() {
           <WrapperHeaderAccount>
             <UserOutlined style={{ fontSize: "30px" }} />
             <div>
-              <span>Đăng Nhập/Đăng Ký</span>
+              <WrapperTextHeaderSmall>Đăng Nhập/Đăng Ký</WrapperTextHeaderSmall>
               <div>
-                <span>Tài Khoản</span>
+                <WrapperTextHeaderSmall>Tài Khoản</WrapperTextHeaderSmall>
                 <CaretDownOutlined />
               </div>
             </div>
           </WrapperHeaderAccount>
           <div>
             <ShoppingCartOutlined style={{ fontSize: "30px", color: "#fff" }} />
-            <span style={{ fontSize: "12px", color: "#fff" }}>Giỏ Hàng</span>
+            <WrapperTextHeaderSmall>Giỏ Hàng</WrapperTextHeaderSmall>
           </div>
         </Col>
       </WrapperHeader>
