@@ -6,6 +6,8 @@ import sl1 from "../../assets/image/sl1.jpg";
 import sl2 from "../../assets/image/sl2.jpg";
 import sl3 from "../../assets/image/sl3.jpg";
 import sl4 from "../../assets/image/sl4.jpg";
+import CardComponent from "../../components/CardComponent/CardComponent";
+import NavbarComponent from "../../components/NavbarComponent/NavbarComponent";
 
 export const HomePage = () => {
   const arr = ["TV", "LAPTOP", "TU LANH"];
@@ -19,11 +21,25 @@ export const HomePage = () => {
         </WrapperTypeProduct>
         <div
           id="container"
-          style={{ backgroundColor: "#efefef", padding: "0 120px" }}
+          style={{
+            backgroundColor: "#efefef",
+            padding: "0 120px",
+            height: "1000px",
+          }}
         >
           <SliceComponent arrImage={[sl1, sl2, sl3, sl4]} />
+          <div
+            style={{
+              marginTop: "20px",
+              display: "flex",
+              alignItems: "center",
+              gap: "20px",
+            }}
+          >
+            <CardComponent />
+          </div>
+          <NavbarComponent />
         </div>
-        HomePage
       </div>
     </>
   );
