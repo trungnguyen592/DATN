@@ -5,7 +5,7 @@ import {
   WrapperHeaderAccount,
   WrapperTextHeaderSmall,
 } from "./style";
-import { Col } from "antd";
+import { Badge, Col } from "antd";
 import ButtonSearch from "../ButtonSearch/ButtonSearch";
 import {
   UserOutlined,
@@ -43,7 +43,11 @@ function HeaderComponent() {
             </div>
           </WrapperHeaderAccount>
           <div>
-            <ShoppingCartOutlined style={{ fontSize: "30px", color: "#fff" }} />
+            <Badge count={4} size="small">
+              <ShoppingCartOutlined
+                style={{ fontSize: "30px", color: "#fff" }}
+              />
+            </Badge>
             <WrapperTextHeaderSmall>Giỏ Hàng</WrapperTextHeaderSmall>
           </div>
         </Col>

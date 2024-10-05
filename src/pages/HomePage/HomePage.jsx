@@ -1,6 +1,10 @@
 import React from "react";
 import TypeProduct from "../../components/TypeProduct/TypeProduct/TypeProduct";
-import { WrapperTypeProduct, WrapperButtonMore } from "./style";
+import {
+  WrapperTypeProduct,
+  WrapperButtonMore,
+  WrapperProducts,
+} from "./style";
 import SliceComponent from "../../components/SliceComponent/SliceComponent";
 import sl1 from "../../assets/image/sl1.jpg";
 import sl2 from "../../assets/image/sl2.jpg";
@@ -27,22 +31,14 @@ export const HomePage = () => {
           }}
         >
           <SliceComponent arrImage={[sl1, sl2, sl3, sl4]} />
-          <div
-            style={{
-              marginTop: "20px",
-              display: "flex",
-              alignItems: "center",
-              gap: "20px",
-              flexWrap: "wrap",
-            }}
-          >
+          <WrapperProducts>
             <CardComponent />
             <CardComponent />
             <CardComponent />
             <CardComponent />
             <CardComponent />
             <CardComponent />
-          </div>
+          </WrapperProducts>
           <div
             style={{
               width: "100%",
