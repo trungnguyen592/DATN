@@ -1,19 +1,18 @@
 import React from "react";
 import TypeProduct from "../../components/TypeProduct/TypeProduct/TypeProduct";
-import { WrapperTypeProduct } from "./style";
+import { WrapperTypeProduct, WrapperButtonMore } from "./style";
 import SliceComponent from "../../components/SliceComponent/SliceComponent";
 import sl1 from "../../assets/image/sl1.jpg";
 import sl2 from "../../assets/image/sl2.jpg";
 import sl3 from "../../assets/image/sl3.jpg";
 import sl4 from "../../assets/image/sl4.jpg";
 import CardComponent from "../../components/CardComponent/CardComponent";
-import NavbarComponent from "../../components/NavbarComponent/NavbarComponent";
 
 export const HomePage = () => {
   const arr = ["TV", "LAPTOP", "TU LANH"];
   return (
     <>
-      <div style={{ padding: "0 120px" }}>
+      <div style={{ padding: "0 150px" }}>
         <WrapperTypeProduct>
           {arr.map((item) => {
             return <TypeProduct name={item} key={item} />;
@@ -23,8 +22,8 @@ export const HomePage = () => {
           id="container"
           style={{
             backgroundColor: "#efefef",
-            padding: "0 120px",
             height: "1000px",
+            width: "100%",
           }}
         >
           <SliceComponent arrImage={[sl1, sl2, sl3, sl4]} />
@@ -34,11 +33,37 @@ export const HomePage = () => {
               display: "flex",
               alignItems: "center",
               gap: "20px",
+              flexWrap: "wrap",
             }}
           >
             <CardComponent />
+            <CardComponent />
+            <CardComponent />
+            <CardComponent />
+            <CardComponent />
+            <CardComponent />
           </div>
-          <NavbarComponent />
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "10px",
+            }}
+          >
+            <WrapperButtonMore
+              textButton="More"
+              type="outline"
+              styleButton={{
+                border: "1px solid rgb(11, 116, 229)",
+                color: "rgb(11, 116, 229)",
+                width: "240px",
+                height: "38px",
+                boderRadius: "4px",
+              }}
+              styletextButton={{ fontweight: 500 }}
+            ></WrapperButtonMore>
+          </div>
         </div>
       </div>
     </>
