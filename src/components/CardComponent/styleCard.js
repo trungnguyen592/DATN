@@ -33,3 +33,9 @@ export const WrapperSalesText = styled.span`
   font-weight: 500;
   color: rgb(255, 66, 78);
 `;
+
+export const WrapperStyleTextSell = styled.span`
+  color: rgb(120, 120, 120);
+  font-size: 15px;
+  line-height: 24px;
+`;
