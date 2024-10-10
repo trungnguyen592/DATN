@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   WrapperContainerLeft,
   WrapperTextLight,
@@ -8,8 +8,14 @@ import InputForm from "../../components/InputForm/InputForm";
 import ButtonComponents from "../../components/ButtonComponents/ButtonComponents";
 import imageLogo from "../../assets/image/anhlogin.png";
 import { Image } from "antd";
+import { EyeFilled, EyeInvisibleFilled } from "@ant-design/icons";
 
 const SignInPage = () => {
+  const [isShowPassword, setIsShowPassword] = useState(false);
+  const togglePasswordVisibility = () => {
+    setIsShowPassword((prevState) => !prevState);
+  };
+
   return (
     <div
       style={{
@@ -36,7 +42,26 @@ const SignInPage = () => {
             style={{ marginBottom: "10px" }}
             placeholder="ito@gmail.com"
           />
-          <InputForm placeholder="password" />
+          <div style={{ position: "relative" }}>
+            <span
+              onClick={togglePasswordVisibility} // Thêm sự kiện click
+              style={{
+                zIndex: 10,
+                position: "absolute",
+                top: "20px",
+                fontSize: "15px",
+                transform: "translateY(-50%)",
+                right: "8px",
+                cursor: "pointer", // Thêm con trỏ chỉ tay để biết có thể click
+              }}
+            >
+              {isShowPassword ? <EyeFilled /> : <EyeInvisibleFilled />}
+            </span>
+          </div>
+          <InputForm
+            placeholder="password"
+            type={isShowPassword ? "text" : "password"} // Sử dụng trạng thái để thay đổi type
+          />
           <ButtonComponents
             bordered={false}
             size={40}

@@ -15,22 +15,29 @@ import {
 
 function HeaderComponent() {
   return (
-    <div>
+    <div
+      style={{
+        width: "100%",
+        background: "rgb(26,148,255",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
       <WrapperHeader>
-        <Col span={6}>
+        <Col span={5}>
           <WrapperTextHeader>IE-Commerce</WrapperTextHeader>
         </Col>
-        <Col span={12}>
+        <Col span={13}>
           <ButtonSearch
-            placeholder="input search text"
-            textButton="Search"
+            placeholder="IE-Commerce bao ship 0Đ - Đăng ký ngay!"
+            textButton="Tìm kiếm"
             size="large"
             bordered={false}
           />
         </Col>
         <Col
           span={6}
-          style={{ display: "flex", gap: "20px", alignItems: "center" }}
+          style={{ display: "flex", gap: "30px", alignItems: "center" }}
         >
           <WrapperHeaderAccount>
             <UserOutlined style={{ fontSize: "30px" }} />

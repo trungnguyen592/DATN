@@ -34,7 +34,7 @@ const CardComponent = () => {
         <WrapperStyleTextSell> | Sold 1000+</WrapperStyleTextSell>
       </WrapperReporText>
       <WrapperPriceText>
-        19.999.999d
+        <span style={{ marginRight: "8px" }}>19.999.999d</span>
         <WrapperSalesText>-15%</WrapperSalesText>
       </WrapperPriceText>
     </WrapperCardStyle>

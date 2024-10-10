@@ -16,19 +16,23 @@ export const HomePage = () => {
   const arr = ["TV", "LAPTOP", "TU LANH"];
   return (
     <>
-      <div style={{ padding: "0 150px" }}>
+      <div style={{ width: "1270px", margin: " 0 auto" }}>
         <WrapperTypeProduct>
           {arr.map((item) => {
             return <TypeProduct name={item} key={item} />;
           })}
         </WrapperTypeProduct>
+      </div>
+      <div
+        className="body"
+        style={{
+          backgroundColor: "#efefef",
+          width: "100%",
+        }}
+      >
         <div
           id="container"
-          style={{
-            backgroundColor: "#efefef",
-            height: "1000px",
-            width: "100%",
-          }}
+          style={{ height: "1000px", width: "1270px", margin: " 0 auto" }}
         >
           <SliceComponent arrImage={[sl1, sl2, sl3, sl4]} />
           <WrapperProducts>

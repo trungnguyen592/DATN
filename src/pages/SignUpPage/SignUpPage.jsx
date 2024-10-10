@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   WrapperContainerLeft,
   WrapperTextLight,
@@ -8,8 +8,20 @@ import InputForm from "../../components/InputForm/InputForm";
 import ButtonComponents from "../../components/ButtonComponents/ButtonComponents";
 import imageLogo from "../../assets/image/anhlogin.png";
 import { Image } from "antd";
+import { EyeFilled, EyeInvisibleFilled } from "@ant-design/icons";
 
 const SignUpPage = () => {
+  const [isShowPassword, setIsShowPassword] = useState(false);
+  const [isShowConfirmPassword, setIsShowConfirmPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setIsShowPassword(!isShowPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setIsShowConfirmPassword(!isShowConfirmPassword);
+  };
+
   return (
     <div
       style={{
@@ -36,8 +48,51 @@ const SignUpPage = () => {
             style={{ marginBottom: "10px" }}
             placeholder="ito@gmail.com"
           />
-          <InputForm style={{ marginBottom: "10px" }} placeholder="password" />
-          <InputForm placeholder="confirm password" />
+
+          {/* Password Input with Toggle */}
+          <div style={{ position: "relative", marginBottom: "10px" }}>
+            <InputForm
+              placeholder="password"
+              type={isShowPassword ? "text" : "password"}
+            />
+            <span
+              onClick={togglePasswordVisibility}
+              style={{
+                zIndex: 10,
+                position: "absolute",
+                top: "50%",
+                right: "8px",
+                transform: "translateY(-50%)",
+                cursor: "pointer",
+                fontSize: "15px",
+              }}
+            >
+              {isShowPassword ? <EyeFilled /> : <EyeInvisibleFilled />}
+            </span>
+          </div>
+
+          {/* Confirm Password Input with Toggle */}
+          <div style={{ position: "relative", marginBottom: "10px" }}>
+            <InputForm
+              placeholder="confirm password"
+              type={isShowConfirmPassword ? "text" : "password"}
+            />
+            <span
+              onClick={toggleConfirmPasswordVisibility}
+              style={{
+                zIndex: 10,
+                position: "absolute",
+                top: "50%",
+                right: "8px",
+                transform: "translateY(-50%)",
+                cursor: "pointer",
+                fontSize: "15px",
+              }}
+            >
+              {isShowConfirmPassword ? <EyeFilled /> : <EyeInvisibleFilled />}
+            </span>
+          </div>
+
           <ButtonComponents
             bordered={false}
             size={40}
